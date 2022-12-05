@@ -1,9 +1,10 @@
 import React from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import dynamic from 'next/dynamic';
+import CandyMachine from "../components/CandyMachine";
 // Constantes
-const TWITTER_HANDLE = "FelipeBMost";
-const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
+const GITHUB_HANDLE = "FelipeBMost";
+const GITHUB_LINK = `https://github.com/${GITHUB_HANDLE}`;
 
 const Home = () => {
     const WalletMultiButtonDynamic = dynamic(
@@ -14,7 +15,7 @@ const Home = () => {
         const wallet = useWallet();
     const renderNotConnectedContainer = () => (
         <div>
-            <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji"/>"
+            <img src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif" alt="emoji"/>
 
             <div className="button.container">
                 <WalletMultiButtonDynamic className="cta-button connect-wallet-button" />
@@ -23,18 +24,18 @@ const Home = () => {
     )
     return (
         <div className="App">
-            <div className="container">
+            <section className="container">
                 <div className="header-container">
-                    <p className="header">🍭 Candy Drop</p>
-                    <p className="sub-text">Máquina de NFTs com cunhagem justa</p>
+                    <h1 className="header">Solana NFT Drop</h1>
+                    <p className="sub-text">NFT Machine with fair minting</p>
                 </div>
 
-                {wallet.publicKey ? "Hello World" : renderNotConnectedContainer()}
+                {wallet.publicKey ? <CandyMachine walletAddress={wallet} /> : renderNotConnectedContainer()}
                 <div className="footer-container">
-                    <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
-                    <a className="footer-text" href={TWITTER_LINK} target="_blank" rel="noreferrer">{`feito por @${TWITTER_HANDLE}`}</a>
+                    <img alt="Github Logo" className="github-logo" src="github-logo.svg" />
+                    <a className="footer-text" href={GITHUB_LINK} target="_blank" rel="noreferrer">{`feito por @${GITHUB_HANDLE}`}</a>
                 </div>
-            </div>
+            </section>
         </div>
     );
 };

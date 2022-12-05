@@ -1,0 +1,20 @@
+{
+    "name": "No Game No Life #0",
+    "symbol": "CHESS",
+    "description": "Coleção de 10 números na blockchain. Este é o número 1/10.",
+    "image": "0.png",
+    "attributes": [
+      {
+        "trait_type": "Number",
+        "value": "0"
+      }
+    ],
+    "properties": {
+      "files": [
+        {
+          "uri": "0.png",
+          "type": "image/png"
+        }
+      ]
+    }
+  }
